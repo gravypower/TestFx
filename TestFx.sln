@@ -51,6 +51,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFx.Farada", "src\TestFx
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{6B28D570-67CE-4E55-840F-979DCC5B553E}"
 	ProjectSection(SolutionItems) = preProject
+		shared\build\_Functions.ps1 = shared\build\_Functions.ps1
+		shared\build\_Import.ps1 = shared\build\_Import.ps1
+		shared\build\_Variables.ps1 = shared\build\_Variables.ps1
 		Build.Shared.ps1 = Build.Shared.ps1
 		Build.User.ps1 = Build.User.ps1
 		shared\build\CleanOutput.ps1 = shared\build\CleanOutput.ps1
