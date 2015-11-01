@@ -31,24 +31,23 @@ namespace TestFx.ReSharper.UnitTesting.Elements
         : base(identity, tasks)
     {
     }
+        
+        //// TODO: introduced invariance!
+      public override UnitTestElementNamespace GetNamespace ()
+      {
+            return Parent != null ? Parent.GetNamespace() : null;
+        }
 
-    [CanBeNull]
-    public override IDeclaredElement GetDeclaredElement ()
-    {
-      return null;
-    }
+      [CanBeNull]
+        public override IDeclaredElement GetDeclaredElement()
+      {
+          return null;
+      }
 
     [CanBeNull]
     public override IEnumerable<IProjectFile> GetProjectFiles ()
     {
       return Parent != null ? Parent.GetProjectFiles() : Enumerable.Empty<IProjectFile>();
-    }
-
-    // TODO: introduced invariance!
-    [CanBeNull]
-    public override UnitTestNamespace GetNamespace ()
-    {
-      return Parent != null ? Parent.GetNamespace() : null;
     }
 
     internal override IEnumerable<ITestFile> GetTestFiles ()

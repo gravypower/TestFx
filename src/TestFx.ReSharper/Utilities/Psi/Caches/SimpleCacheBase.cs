@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using JetBrains.Annotations;
 using JetBrains.Application;
 using JetBrains.Application.Progress;
 using JetBrains.DocumentManagers.impl;
@@ -210,5 +211,10 @@ namespace TestFx.ReSharper.Utilities.Psi.Caches
     protected abstract void RemoveFileFromCache (IPsiSourceFile sourceFile);
     protected abstract bool IsCached (IPsiSourceFile sourceFile);
     protected abstract void ClearCache ();
-  }
+
+        public void Dump([NotNull] TextWriter writer, [CanBeNull] IPsiSourceFile sourceFile)
+        {
+            
+        }
+    }
 }

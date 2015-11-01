@@ -60,7 +60,7 @@ namespace TestFx.ReSharper.UnitTesting.Elements
     [CanBeNull]
     public abstract IEnumerable<IProjectFile> GetProjectFiles ();
 
-    public abstract UnitTestNamespace GetNamespace ();
+    public abstract UnitTestElementNamespace GetNamespace ();
 
     [CanBeNull]
     public abstract IDeclaredElement GetDeclaredElement ();

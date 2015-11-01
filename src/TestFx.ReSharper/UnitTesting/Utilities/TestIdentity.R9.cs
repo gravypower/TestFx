@@ -15,6 +15,7 @@
 using System;
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.UnitTestFramework;
+using JetBrains.ReSharper.UnitTestFramework.Elements;
 using TestFx.Utilities;
 
 namespace TestFx.ReSharper.UnitTesting.Utilities
@@ -24,14 +25,16 @@ namespace TestFx.ReSharper.UnitTesting.Utilities
     UnitTestElementId ElementId { get; }
   }
 
-  public partial class TestIdentity
+    [SolutionComponent]
+    public partial class TestIdentity
   {
     private readonly UnitTestElementId _elementId;
 
-    public TestIdentity (ITestProvider provider, IProject project, IIdentity wrappedIdentity)
+    
+    public TestIdentity (ITestProvider provider, IProject project, IIdentity wrappedIdentity, IUnitTestElementIdFactory unitTestElementIdFactory)
         : this(provider, wrappedIdentity)
     {
-      _elementId = new UnitTestElementId(_provider, new PersistentProjectId(project), Absolute);
+        _elementId = unitTestElementIdFactory.Create(_provider, new PersistentProjectId(project), Absolute);
     }
 
     public UnitTestElementId ElementId

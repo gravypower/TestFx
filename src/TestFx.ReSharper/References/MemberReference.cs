@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using System;
+using System.Collections.Generic;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.CSharp.Util;
@@ -95,5 +96,7 @@ namespace TestFx.ReSharper.References
     {
       return GetReferenceSymbolTable(false);
     }
+
+      public IEnumerable<DeclaredElementType> ExpecteDeclaredElementTypes { get; }
   }
 }

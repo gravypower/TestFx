@@ -39,5 +39,10 @@ namespace TestFx.ReSharper.UnitTesting
         : base(Logger.GetLogger(typeof (MetadataElementsSource)), shellLocks)
     {
     }
+
+      public void ExploreProjects (IDictionary<IProject, FileSystemPath> projects, MetadataLoader loader, IUnitTestElementsObserver observer, Action<IProject, IMetadataAssembly, IUnitTestElementsObserver> exploreAssembly)
+      {
+          
+      }
   }
 }
